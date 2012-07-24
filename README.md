@@ -1,5 +1,6 @@
-
 #Demo Topology
+
+This is just a simple topology demo not unlike any found in the [storm-starter](https://github.com/nathanmarz/storm-starter) repo. I would recommend starting there. But this topology does demo the amqp-spout and has a heavily annotated clojure topology. 
 
 ##Install
 
