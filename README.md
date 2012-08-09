@@ -11,9 +11,25 @@ This is just a simple topology demo not unlike any found in the [storm-starter](
 2. Install local jars. From the lib directory run both commands below
     
    ```
-   mvn install:install-file  -Dfile=./lib/storm-json-0.0.1.jar -DartifactId=storm-json  -Dversion=0.0.1 -DgroupId=com.rapportive  -Dpackaging=jar  -DlocalRepositoryPath=../demo/mvn_repo
+   # amqp spout
+    mvn deploy:deploy-file    		       \
+   -Dfile=./lib/storm-amqp-spout-0.1.4.jar \
+   -DartifactId=storm-amqp-spout           \
+   -Dversion=0.1.4                   	    \
+   -DgroupId=com.rapportive          	    \
+   -Dpackaging=jar                   	    \
+   -Durl=file:mvn_repo/
+
+   #json schema
+   mvn deploy:deploy-file      		   \
+   -Dfile=./lib/storm-json-0.0.1.jar 	\
+   -DartifactId=storm-json     		   \
+   -Dversion=0.0.1             		   \
+   -DgroupId=com.rapportive    		   \
+   -Dpackaging=jar             		   \
+   -Durl=file:mvn_repo/
    
-   mvn install:install-file -Dfile=./lib/storm-amqp-spout-0.1.4.jar -DartifactId=storm-amqp-spout -Dversion=0.1.4 -DgroupId=com.rapportive -Dpackaging=jar -DlocalRepositoryPath=../demo/mvn_repo
+   
    ```
    
 3. Load up depedencies and compile
